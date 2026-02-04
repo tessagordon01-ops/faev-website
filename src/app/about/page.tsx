@@ -40,7 +40,7 @@ export default function AboutPage() {
               About Us
             </h1>
             <p className="text-xl text-gray-600">
-              Founded by Tessa and Lili — we wanted to fix roommate hunting for everyone.
+              We wanted to fix roommate hunting for everyone.
             </p>
           </motion.div>
         </section>
