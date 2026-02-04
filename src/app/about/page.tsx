@@ -76,13 +76,19 @@ export default function AboutPage() {
               className="prose prose-lg"
             >
               <p className="text-gray-600 mb-6">
-                Finding roommates and apartments shouldn't be this hard. We built Faev because we've been through the frustration ourselves — endless scrolling, sketchy listings, and people who ghost after the first message.
+                Faev began with a real post-grad problem. After graduating in 2023, Tessa assumed finding a roommate would feel as easy as it did in college. Instead, she found herself back in her childhood bedroom, scrolling through online housing groups that mixed real people with bots and scammers. Something that should have been simple felt chaotic and unsafe.
               </p>
               <p className="text-gray-600 mb-6">
-                Faev helps you find your people first, then find a place together. Everyone on the platform is verified with ID and face matching, so you know who you're actually talking to.
+                That experience sparked the idea for something better. When Tessa met Lili, they realized they shared the same frustration and the same vision. They wanted a calmer, safer, more thoughtful way for young people to move, find housing, and build community in new cities. A platform that welcomes everyone and focuses on real compatibility.
               </p>
-              <p className="text-gray-600">
-                We're launching soon in NYC and LA.
+              <p className="text-gray-600 mb-6">
+                Together they created Faev, an AI-powered moving concierge that helps people find verified roommates, subleases, and new friends. Instead of browsing unmoderated feeds, users get connected with real, verified people by our AI that matches based on lifestyle and the things that matter.
+              </p>
+              <p className="text-gray-600 mb-6">
+                Faev supports anyone navigating a move or a new chapter, whether across the country or across town. It's a way to build your circle, feel less alone, and start your next phase with confidence and connection. Launching in LA and NYC first.
+              </p>
+              <p className="text-gray-600 text-sm italic">
+                Faev is open to people of all genders and backgrounds. We do not permit discriminatory listings or preferences, and we expect every user to follow Fair Housing requirements.
               </p>
             </motion.div>
           </div>
