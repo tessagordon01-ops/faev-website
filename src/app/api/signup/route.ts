@@ -5,31 +5,38 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
 
-    // Send to Google Apps Script (for spreadsheet logging)
+    // Send to Google Apps Script (for spreadsheet logging) — MUST await so serverless doesn't exit before request completes
     const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
-
     if (GOOGLE_SCRIPT_URL) {
-      fetch(GOOGLE_SCRIPT_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...data,
-          timestamp: new Date().toISOString(),
-        }),
-      }).catch(console.error); // Don't block on this
+      try {
+        const sheetResponse = await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...data,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+        if (!sheetResponse.ok) {
+          console.error("Google Sheets signup log failed:", sheetResponse.status, await sheetResponse.text());
+        }
+      } catch (sheetError) {
+        console.error("Google Sheets signup request error:", sheetError);
+      }
+    } else {
+      console.warn("GOOGLE_SCRIPT_URL not set — signups will not be logged to Google Sheets");
     }
 
-    // Send email notification via Resend (more reliable)
+    // Send emails via Resend
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
-    console.log("RESEND_API_KEY exists:", !!RESEND_API_KEY);
-
     if (RESEND_API_KEY) {
+      const resend = new Resend(RESEND_API_KEY);
+      const from = "Faev <onboarding@resend.dev>";
+
+      // 1. Internal notification to you
       try {
-        const resend = new Resend(RESEND_API_KEY);
-        const emailResult = await resend.emails.send({
-          from: "Faev <onboarding@resend.dev>",
+        await resend.emails.send({
+          from,
           to: "tessa@faev.app",
           subject: `🎉 New Faev Signup: ${data.email}`,
           html: `
@@ -47,10 +54,29 @@ export async function POST(request: NextRequest) {
             <p><strong>Referred by:</strong> ${data.referredBy || "Direct"}</p>
           `,
         });
-        console.log("Resend result:", JSON.stringify(emailResult));
       } catch (emailError) {
-        console.error("Resend email error:", emailError);
+        console.error("Resend internal notification error:", emailError);
       }
+
+      // 2. Welcome/confirmation email to the new user
+      try {
+        await resend.emails.send({
+          from,
+          to: data.email,
+          subject: "You're on the Faev waitlist",
+          html: `
+            <p>Hi —</p>
+            <p>Thanks for requesting access to Faev. You're on the list.</p>
+            <p>We're matching roommates and building groups for NYC and LA. We'll be in touch when we're ready to invite you in.</p>
+            <p>In the meantime, share your referral link — each friend who signs up moves you up the waitlist.</p>
+            <p>Best,<br>Faev</p>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Resend welcome email error:", emailError);
+      }
+    } else {
+      console.warn("RESEND_API_KEY not set — no signup emails will be sent");
     }
 
     // Generate referral code
