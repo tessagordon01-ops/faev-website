@@ -5,27 +5,7 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
 
-    // Send to Google Apps Script (for spreadsheet logging) — MUST await so serverless doesn't exit before request completes
-    const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
-    if (GOOGLE_SCRIPT_URL) {
-      try {
-        const sheetResponse = await fetch(GOOGLE_SCRIPT_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...data,
-            timestamp: new Date().toISOString(),
-          }),
-        });
-        if (!sheetResponse.ok) {
-          console.error("Google Sheets signup log failed:", sheetResponse.status, await sheetResponse.text());
-        }
-      } catch (sheetError) {
-        console.error("Google Sheets signup request error:", sheetError);
-      }
-    } else {
-      console.warn("GOOGLE_SCRIPT_URL not set — signups will not be logged to Google Sheets");
-    }
+    // Google Sheets logging disabled - using Resend emails only
 
     // Send emails via Resend
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
