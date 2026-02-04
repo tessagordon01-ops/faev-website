@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     if (RESEND_API_KEY) {
       const resend = new Resend(RESEND_API_KEY);
       await resend.emails.send({
-        from: "Faev <tessa@faev.app>",
+        from: "Faev <onboarding@resend.dev>",
         to: "tessa@faev.app",
         subject: `🎉 New Faev Signup: ${data.email}`,
         html: `

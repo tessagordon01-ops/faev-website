@@ -13,7 +13,7 @@ export async function POST(request: Request) {
 
     // Send notification to Tessa
     await resend.emails.send({
-      from: 'Faev <tessa@faev.app>',
+      from: 'Faev <onboarding@resend.dev>',
       to: 'tessa@faev.app',
       subject: `New Property Manager Inquiry from ${name}`,
       html: `
@@ -28,7 +28,7 @@ export async function POST(request: Request) {
 
     // Send auto-reply to the property manager
     await resend.emails.send({
-      from: 'Faev <tessa@faev.app>',
+      from: 'Faev <onboarding@resend.dev>',
       to: email,
       subject: 'Thanks for signing up for Faev',
       html: `
