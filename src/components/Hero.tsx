@@ -5,15 +5,15 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 relative overflow-hidden">
-      {/* Background floating images */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12 relative overflow-hidden">
+      {/* Background floating images - hidden on mobile, visible on larger screens */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
         {/* Top left */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="absolute top-24 left-[3%] w-40 h-52 sm:w-44 sm:h-56 md:w-48 md:h-60 rounded-2xl overflow-hidden shadow-lg"
+          className="absolute top-24 left-[3%] w-48 h-60 rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
             src="/hero-1.jpg"
@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="absolute bottom-24 left-[8%] w-36 h-48 sm:w-40 sm:h-52 md:w-44 md:h-56 rounded-2xl overflow-hidden shadow-lg"
+          className="absolute bottom-24 left-[8%] w-44 h-56 rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
             src="/hero-3.jpg"
@@ -43,7 +43,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="absolute top-28 right-[3%] w-36 h-48 sm:w-40 sm:h-52 md:w-44 md:h-56 rounded-2xl overflow-hidden shadow-lg"
+          className="absolute top-28 right-[3%] w-44 h-56 rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
             src="/hero-2.jpg"
@@ -58,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="absolute bottom-20 right-[8%] w-40 h-52 sm:w-44 sm:h-56 md:w-48 md:h-60 rounded-2xl overflow-hidden shadow-lg"
+          className="absolute bottom-20 right-[8%] w-48 h-60 rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
             src="/hero-kitchen.jpg"
@@ -95,7 +95,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10"
+          className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10 px-4"
         >
           Find roommates you actually like — and a place that works for all of you.
         </motion.p>
@@ -104,7 +104,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
         >
           <motion.a
             href="https://forms.gle/HPdyjnAsUog9wiS67"
@@ -126,6 +126,22 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
+        {/* Mobile-only hero image */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-12 md:hidden"
+        >
+          <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg mx-auto max-w-sm">
+            <Image
+              src="/hero-1.jpg"
+              alt="Friends gathering"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </motion.div>
       </div>
 
     </section>
