@@ -95,7 +95,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 px-4"
+          className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md lg:max-w-2xl mx-auto mb-10 px-4"
         >
           Find roommates you actually like — and a place that works for all of you.
         </motion.p>
