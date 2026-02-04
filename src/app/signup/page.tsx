@@ -147,12 +147,42 @@ export default function SignupPage() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    // Generate referral link
-    const refCode = Math.random().toString(36).substring(2, 8).toUpperCase();
-    setReferralLink(`https://faev.app/signup?ref=${refCode}`);
+    try {
+      const response = await fetch("/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          city: formData.city === "Other" ? formData.otherCity : formData.city,
+          timeline: formData.timeline,
+          lookingFor: formData.lookingFor,
+          email: formData.email,
+          instagram: formData.instagram,
+          budget: formData.budget,
+          neighborhoods: formData.neighborhoods,
+          vibes: formData.vibes,
+          vibeText: formData.vibeText,
+          dealbreakers: formData.dealbreakers,
+          referredBy: new URLSearchParams(window.location.search).get("ref") || "",
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setReferralLink(result.referralLink);
+      } else {
+        // Fallback referral link
+        const refCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+        setReferralLink(`https://faev.app/signup?ref=${refCode}`);
+      }
+    } catch (error) {
+      // Fallback on error
+      const refCode = Math.random().toString(36).substring(2, 8).toUpperCase();
+      setReferralLink(`https://faev.app/signup?ref=${refCode}`);
+    }
 
     setStep(3);
     setIsSubmitting(false);
