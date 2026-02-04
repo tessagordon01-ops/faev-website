@@ -104,7 +104,6 @@ export default function SignupPage() {
     dealbreakers: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
   const [referralLink, setReferralLink] = useState("");
 
   const handleLookingForToggle = (option: string) => {
@@ -147,11 +146,9 @@ export default function SignupPage() {
   const canProceedStep2 = formData.email;
 
   const handleSubmit = async () => {
-    // Prevent double submission
-    if (isSubmitting || hasSubmitted) return;
-
+    // Prevent double click
+    if (isSubmitting) return;
     setIsSubmitting(true);
-    setHasSubmitted(true);
 
     try {
       const response = await fetch("/api/signup", {
