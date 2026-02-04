@@ -84,7 +84,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6"
         >
           Find your people.
           <br />
@@ -95,7 +95,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-10 px-4"
+          className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 px-4"
         >
           Find roommates you actually like — and a place that works for all of you.
         </motion.p>
