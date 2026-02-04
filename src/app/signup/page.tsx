@@ -146,9 +146,14 @@ export default function SignupPage() {
   const canProceedStep2 = formData.email;
 
   const handleSubmit = async () => {
+    console.log("handleSubmit called");
     // Prevent double click
-    if (isSubmitting) return;
+    if (isSubmitting) {
+      console.log("Already submitting, returning");
+      return;
+    }
     setIsSubmitting(true);
+    console.log("Starting API call...");
 
     try {
       const response = await fetch("/api/signup", {
@@ -171,7 +176,9 @@ export default function SignupPage() {
         }),
       });
 
+      console.log("API response status:", response.status);
       const result = await response.json();
+      console.log("API result:", result);
 
       if (result.success) {
         setReferralLink(result.referralLink);
@@ -181,6 +188,7 @@ export default function SignupPage() {
         setReferralLink(`${window.location.origin}/signup?ref=${refCode}`);
       }
     } catch (error) {
+      console.error("Signup fetch error:", error);
       // Fallback on error
       const refCode = Math.random().toString(36).substring(2, 8).toUpperCase();
       setReferralLink(`${window.location.origin}/signup?ref=${refCode}`);
