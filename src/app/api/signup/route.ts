@@ -23,27 +23,34 @@ export async function POST(request: NextRequest) {
 
     // Send email notification via Resend (more reliable)
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    console.log("RESEND_API_KEY exists:", !!RESEND_API_KEY);
+
     if (RESEND_API_KEY) {
-      const resend = new Resend(RESEND_API_KEY);
-      await resend.emails.send({
-        from: "Faev <onboarding@resend.dev>",
-        to: "tessa@faev.app",
-        subject: `🎉 New Faev Signup: ${data.email}`,
-        html: `
-          <h2>New Signup!</h2>
-          <p><strong>Email:</strong> ${data.email}</p>
-          <p><strong>Instagram:</strong> @${data.instagram || "N/A"}</p>
-          <p><strong>City:</strong> ${data.city}</p>
-          <p><strong>Timeline:</strong> ${data.timeline}</p>
-          <p><strong>Looking for:</strong> ${data.lookingFor?.join(", ") || ""}</p>
-          <p><strong>Budget:</strong> ${data.budget || "N/A"}</p>
-          <p><strong>Neighborhoods:</strong> ${data.neighborhoods?.join(", ") || "N/A"}</p>
-          <p><strong>Vibes:</strong> ${data.vibes?.join(", ") || ""}</p>
-          <p><strong>Notes:</strong> ${data.vibeText || "N/A"}</p>
-          <p><strong>Dealbreakers:</strong> ${data.dealbreakers || "N/A"}</p>
-          <p><strong>Referred by:</strong> ${data.referredBy || "Direct"}</p>
-        `,
-      });
+      try {
+        const resend = new Resend(RESEND_API_KEY);
+        const emailResult = await resend.emails.send({
+          from: "Faev <onboarding@resend.dev>",
+          to: "tessa@faev.app",
+          subject: `🎉 New Faev Signup: ${data.email}`,
+          html: `
+            <h2>New Signup!</h2>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Instagram:</strong> @${data.instagram || "N/A"}</p>
+            <p><strong>City:</strong> ${data.city}</p>
+            <p><strong>Timeline:</strong> ${data.timeline}</p>
+            <p><strong>Looking for:</strong> ${data.lookingFor?.join(", ") || ""}</p>
+            <p><strong>Budget:</strong> ${data.budget || "N/A"}</p>
+            <p><strong>Neighborhoods:</strong> ${data.neighborhoods?.join(", ") || "N/A"}</p>
+            <p><strong>Vibes:</strong> ${data.vibes?.join(", ") || ""}</p>
+            <p><strong>Notes:</strong> ${data.vibeText || "N/A"}</p>
+            <p><strong>Dealbreakers:</strong> ${data.dealbreakers || "N/A"}</p>
+            <p><strong>Referred by:</strong> ${data.referredBy || "Direct"}</p>
+          `,
+        });
+        console.log("Resend result:", JSON.stringify(emailResult));
+      } catch (emailError) {
+        console.error("Resend email error:", emailError);
+      }
     }
 
     // Generate referral code
