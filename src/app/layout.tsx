@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Caveat } from "next/font/google";
+import { Inter, Kaushan_Script } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -7,8 +7,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const caveat = Caveat({
-  variable: "--font-caveat",
+const kaushanScript = Kaushan_Script({
+  variable: "--font-script",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -24,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${caveat.variable} antialiased`}>
+      <body className={`${inter.variable} ${kaushanScript.variable} antialiased`}>
         {children}
       </body>
     </html>

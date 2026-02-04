@@ -56,21 +56,19 @@ export default function AboutPage() {
           >
             <div className="relative">
               {/* Tessa label - left side */}
-              <div className="absolute -left-4 md:-left-16 top-1/4 z-10 flex flex-col items-center">
-                <span className="font-[var(--font-caveat)] text-2xl md:text-3xl text-gray-700">Tessa</span>
-                <svg className="w-12 h-12 md:w-16 md:h-16 text-gray-600" viewBox="0 0 60 60" fill="none">
-                  <path d="M30 5 Q45 25, 55 45" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                  <path d="M48 38 L55 45 L46 46" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <div className="absolute -left-2 md:-left-20 top-1/3 z-10 flex items-center gap-1">
+                <span className="font-[var(--font-script)] text-2xl md:text-3xl text-gray-700 italic">Tessa</span>
+                <svg className="w-8 h-8 md:w-10 md:h-10 text-gray-600 rotate-45" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
 
               {/* Lili label - right side */}
-              <div className="absolute -right-4 md:-right-12 top-1/4 z-10 flex flex-col items-center">
-                <span className="font-[var(--font-caveat)] text-2xl md:text-3xl text-gray-700">Lili</span>
-                <svg className="w-12 h-12 md:w-16 md:h-16 text-gray-600" viewBox="0 0 60 60" fill="none">
-                  <path d="M30 5 Q15 25, 5 45" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                  <path d="M12 38 L5 45 L14 46" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+              <div className="absolute -right-2 md:-right-16 top-1/3 z-10 flex items-center gap-1">
+                <svg className="w-8 h-8 md:w-10 md:h-10 text-gray-600 -rotate-45 scale-x-[-1]" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
+                <span className="font-[var(--font-script)] text-2xl md:text-3xl text-gray-700 italic">Lili</span>
               </div>
 
               <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden shadow-lg">
