@@ -81,19 +81,22 @@ export default function AboutPage() {
               className="prose prose-lg"
             >
               <p className="text-gray-600 mb-6">
-                Faev began with a real post-grad problem. After graduating in 2023, Tessa assumed finding a roommate would feel as easy as it did in college. Instead, she found herself back in her childhood bedroom, scrolling through online housing groups that mixed real people with bots and scammers. Something that should have been simple felt chaotic and unsafe.
+                Faev began with a very real post-grad problem. After graduating in 2023, Tessa assumed finding people to live with would feel as easy as it did in college. Instead, she found herself back in her childhood bedroom, scrolling through chaotic online housing groups filled with bots, scammers, and dead ends. Something as important as finding a home felt unsafe, overwhelming, and completely unstructured.
               </p>
               <p className="text-gray-600 mb-6">
-                That experience sparked the idea for something better. When Tessa met Lili, they realized they shared the same frustration and the same vision. They wanted a calmer, safer, more thoughtful way for young people to move, find housing, and build community in new cities. A platform that welcomes everyone and focuses on real compatibility.
+                That frustration sparked the idea for something better. When Tessa met Lili, they realized they shared the same experience—and the same belief that needing another person to sign a lease with you shouldn't feel impossible. And that person shouldn't just be available—they should actually be compatible with you. Apartment hunting shouldn't be a popularity contest or a solo sport.
               </p>
               <p className="text-gray-600 mb-6">
-                Together they created Faev, an AI-powered moving concierge that helps people find verified roommates, subleases, and new friends. Instead of browsing unmoderated feeds, users get connected with real, verified people by our AI that matches based on lifestyle and the things that matter.
+                Together, they created Faev: a group-first, AI-powered housing platform that helps people form verified roommate groups and connect directly with verified brokers and property managers. Instead of endless listings or public posts, Faev focuses on compatibility, readiness, and trust—bringing the right people together before introducing them to the right homes.
               </p>
               <p className="text-gray-600 mb-6">
-                Faev supports anyone navigating a move or a new chapter, whether across the country or across town. It's a way to build your circle, feel less alone, and start your next phase with confidence and connection. Launching in LA and NYC first.
+                Faev is built for people navigating a move or a new chapter—whether they're filling an open seat, forming a group to apartment hunt with, or getting ready to sign in a competitive market. No cold outreach. No wasted tours. Just real people, real groups, and real housing opportunities.
+              </p>
+              <p className="text-gray-600 mb-6">
+                Faev is launching as a web platform in Los Angeles and New York City, starting with renters who want a smarter, more human way to move.
               </p>
               <p className="text-gray-600 text-sm italic">
-                Faev is open to people of all genders and backgrounds. We do not permit discriminatory listings or preferences, and we expect every user to follow Fair Housing requirements.
+                Faev is open to people of all genders and backgrounds. The platform does not solicit or encourage discriminatory preferences and operates in compliance with Fair Housing laws, supporting lawful roommate matching only within the narrow shared-living context.
               </p>
             </motion.div>
           </div>
