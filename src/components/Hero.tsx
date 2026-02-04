@@ -6,8 +6,8 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12 relative overflow-hidden">
-      {/* Background floating images - hidden on mobile, visible on larger screens */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
+      {/* Background floating images - only visible on large screens (1024px+) */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
         {/* Top left */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -124,12 +124,12 @@ export default function Hero() {
           </motion.a>
         </motion.div>
 
-        {/* Mobile-only hero image */}
+        {/* Hero image for mobile and medium screens */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 md:hidden"
+          className="mt-12 lg:hidden"
         >
           <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg mx-auto max-w-sm">
             <Image
