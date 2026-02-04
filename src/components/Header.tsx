@@ -36,9 +36,7 @@ export default function Header() {
             I'm a Property Manager
           </Link>
           <motion.a
-            href="https://forms.gle/HPdyjnAsUog9wiS67"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/signup"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
@@ -102,9 +100,7 @@ export default function Header() {
                 I'm a Property Manager
               </Link>
               <a
-                href="https://forms.gle/HPdyjnAsUog9wiS67"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/signup"
                 className="bg-black text-white px-6 py-3 rounded-full text-base font-medium mt-2 text-center"
               >
                 Request Access

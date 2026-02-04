@@ -107,9 +107,7 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
         >
           <motion.a
-            href="https://forms.gle/HPdyjnAsUog9wiS67"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/signup"
             whileHover={{ scale: 1.02, backgroundColor: "#1a1a1a" }}
             whileTap={{ scale: 0.98 }}
             className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium w-full sm:w-auto transition-colors text-center"

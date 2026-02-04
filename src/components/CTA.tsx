@@ -26,9 +26,7 @@ export default function CTA() {
           </p>
 
           <motion.a
-            href="https://forms.gle/HPdyjnAsUog9wiS67"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/signup"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="inline-block bg-black text-white px-10 py-5 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors"
