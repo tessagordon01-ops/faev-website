@@ -5,7 +5,22 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
 
-    // Google Sheets logging disabled - using Resend emails only
+    // Send to Google Apps Script for spreadsheet logging
+    const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
+    if (GOOGLE_SCRIPT_URL) {
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...data,
+            timestamp: new Date().toISOString(),
+          }),
+        });
+      } catch (sheetError) {
+        console.error("Google Sheets error:", sheetError);
+      }
+    }
 
     // Send emails via Resend
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
