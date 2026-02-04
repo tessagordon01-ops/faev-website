@@ -56,22 +56,22 @@ export default function AboutPage() {
           >
             <div className="relative">
               {/* Labels above photo */}
-              <div className="flex justify-between mb-2 px-4 md:px-12">
+              <div className="flex justify-between mb-1 px-8 md:px-20">
                 {/* Tessa label - left */}
-                <div className="flex flex-col items-start">
-                  <span className="font-[var(--font-script)] text-2xl md:text-3xl text-gray-800">Tessa</span>
-                  <svg className="w-16 h-20 md:w-20 md:h-24 text-gray-800 ml-6" viewBox="0 0 80 100" fill="none">
-                    <path d="M10 5 Q60 20, 50 75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                    <path d="M42 65 L50 75 L40 72" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                <div className="flex flex-col items-center">
+                  <span className="font-[var(--font-script)] text-3xl md:text-4xl text-gray-800">Tessa</span>
+                  <svg className="w-6 h-10 md:w-8 md:h-12 text-gray-800" viewBox="0 0 24 40" fill="none">
+                    <path d="M12 0 L12 32" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M6 26 L12 34 L18 26" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                   </svg>
                 </div>
 
                 {/* Lili label - right */}
-                <div className="flex flex-col items-end">
-                  <span className="font-[var(--font-script)] text-2xl md:text-3xl text-gray-800">Lili</span>
-                  <svg className="w-16 h-20 md:w-20 md:h-24 text-gray-800 mr-6" viewBox="0 0 80 100" fill="none">
-                    <path d="M70 5 Q20 20, 30 75" stroke="currentColor" strokeWidth="2" strokeLinecap="round" fill="none"/>
-                    <path d="M38 65 L30 75 L40 72" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                <div className="flex flex-col items-center">
+                  <span className="font-[var(--font-script)] text-3xl md:text-4xl text-gray-800">Lili</span>
+                  <svg className="w-6 h-10 md:w-8 md:h-12 text-gray-800" viewBox="0 0 24 40" fill="none">
+                    <path d="M12 0 L12 32" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    <path d="M6 26 L12 34 L18 26" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                   </svg>
                 </div>
               </div>
