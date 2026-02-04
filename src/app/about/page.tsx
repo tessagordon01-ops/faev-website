@@ -40,8 +40,28 @@ export default function AboutPage() {
               About Us
             </h1>
             <p className="text-xl text-gray-600">
-              Faev is a female-founded app built with women's comfort and safety in mind.
+              Founded by Tessa and Lili — we wanted to fix roommate hunting for everyone.
             </p>
+          </motion.div>
+        </section>
+
+        {/* Founders Photo */}
+        <section className="py-8 px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="max-w-2xl mx-auto"
+          >
+            <div className="relative w-full aspect-[3/2] rounded-2xl overflow-hidden shadow-lg">
+              <Image
+                src="/founders.jpg"
+                alt="Tessa and Lili, founders of Faev"
+                fill
+                className="object-cover"
+              />
+            </div>
           </motion.div>
         </section>
 
