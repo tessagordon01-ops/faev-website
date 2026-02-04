@@ -23,10 +23,14 @@ export async function POST(request: NextRequest) {
     // Generate referral code
     const refCode = Math.random().toString(36).substring(2, 8).toUpperCase();
 
+    // Use the request URL to build referral link
+    const host = request.headers.get("host") || "faev-website.vercel.app";
+    const protocol = host.includes("localhost") ? "http" : "https";
+
     return NextResponse.json({
       success: true,
       referralCode: refCode,
-      referralLink: `https://faev.app/signup?ref=${refCode}`,
+      referralLink: `${protocol}://${host}/signup?ref=${refCode}`,
     });
   } catch (error) {
     console.error("Signup error:", error);

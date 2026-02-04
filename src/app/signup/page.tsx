@@ -176,12 +176,12 @@ export default function SignupPage() {
       } else {
         // Fallback referral link
         const refCode = Math.random().toString(36).substring(2, 8).toUpperCase();
-        setReferralLink(`https://faev.app/signup?ref=${refCode}`);
+        setReferralLink(`${window.location.origin}/signup?ref=${refCode}`);
       }
     } catch (error) {
       // Fallback on error
       const refCode = Math.random().toString(36).substring(2, 8).toUpperCase();
-      setReferralLink(`https://faev.app/signup?ref=${refCode}`);
+      setReferralLink(`${window.location.origin}/signup?ref=${refCode}`);
     }
 
     setStep(3);
