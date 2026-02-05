@@ -6,31 +6,34 @@ import Image from "next/image";
 
 const flows = [
   {
-    id: "fill-seat",
-    tag: "Have an apartment",
-    title: "Fill an Open Room",
-    description: "Got a room opening up? Share your listing and we'll help you find someone who's actually a good fit. We only show it to people looking for exactly what you have.",
-    forWho: ["You have a place already", "Need to find a new roommate", "Want someone who fits in"],
-    image: "/swap-image.jpg",
-    cta: "Post Your Listing",
-  },
-  {
-    id: "find-people",
-    tag: "Starting solo",
-    title: "Find Roommates First",
-    description: "Looking for an apartment by yourself is exhausting. Find people who want the same neighborhoods, have similar budgets, and won't drive you crazy. Then look together.",
-    forWho: ["You're looking alone right now", "Don't have a place yet", "Want to search with others"],
-    image: "/find-roommates-new.jpg",
-    cta: "Find Roommates",
-  },
-  {
-    id: "join-group",
-    tag: "Want to move fast",
-    title: "Join a Group",
-    description: "Some groups are already looking and just need one more person. Jump in and start touring apartments this week instead of spending a month finding people first.",
-    forWho: ["Don't want to organize everything", "Want to move quickly", "Fine joining an existing crew"],
+    id: "group",
+    tag: "I'm a group",
+    title: "Already have your people?",
+    description:
+      "Faev helps verified roommate groups get introduced to apartments, brokers, and property managers actively looking for full groups — so you're not touring or applying alone.",
+    forWho: ["You have a full roommate group", "Ready to find a place together", "Want vetted brokers and listings"],
     image: "/join-group-nyc.jpg",
-    cta: "See Open Groups",
+    cta: "Get Matched",
+  },
+  {
+    id: "solo",
+    tag: "I'm searching solo",
+    title: "Moving alone doesn't mean apartment-hunting alone.",
+    description:
+      "Faev matches you with compatible roommates or groups who are also looking — so you can form a group first, then find a place together.",
+    forWho: ["You're looking on your own", "Want to find roommates before searching", "Prefer a group before touring"],
+    image: "/find-roommates-new.jpg",
+    cta: "Find Your Group",
+  },
+  {
+    id: "place",
+    tag: "I'm looking for a place",
+    title: "Faev doesn't send endless listings.",
+    description:
+      "Once you're matched with the right roommate or group, we connect you to real opportunities that actually make sense for you.",
+    forWho: ["You're matched and ready", "Want relevant listings only", "No cold outreach or spam"],
+    image: "/swap-image.jpg",
+    cta: "Request Access",
   },
 ];
 
@@ -56,7 +59,7 @@ export default function UserFlows() {
             Three ways to start
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
-            Whether you have a place, have people, or have neither — there's a way in.
+            Whether you're a group, searching solo, or looking for a place — we've got you.
           </p>
         </motion.div>
 

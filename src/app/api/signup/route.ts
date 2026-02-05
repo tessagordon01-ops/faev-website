@@ -5,11 +5,11 @@ export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
 
-    // Send to Google Apps Script for spreadsheet logging
+    // Send to Google Apps Script (for spreadsheet logging) — MUST await so serverless doesn't exit before request completes
     const GOOGLE_SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL;
     if (GOOGLE_SCRIPT_URL) {
       try {
-        await fetch(GOOGLE_SCRIPT_URL, {
+        const sheetResponse = await fetch(GOOGLE_SCRIPT_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -17,20 +17,21 @@ export async function POST(request: NextRequest) {
             timestamp: new Date().toISOString(),
           }),
         });
+        if (!sheetResponse.ok) {
+          console.error("Google Sheets signup log failed:", sheetResponse.status, await sheetResponse.text());
+        }
       } catch (sheetError) {
-        console.error("Google Sheets error:", sheetError);
+        console.error("Google Sheets signup request error:", sheetError);
       }
+    } else {
+      console.warn("GOOGLE_SCRIPT_URL not set — signups will not be logged to Google Sheets");
     }
 
-    // Send emails via Resend — must use RESEND_FROM (verified domain) to deliver to real addresses
+    // Send emails via Resend
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
-    const RESEND_FROM = process.env.RESEND_FROM || "Faev <onboarding@resend.dev>";
     if (RESEND_API_KEY) {
       const resend = new Resend(RESEND_API_KEY);
-      const from = RESEND_FROM;
-      if (from.includes("resend.dev")) {
-        console.warn("RESEND_FROM not set or invalid — using onboarding@resend.dev (emails will NOT deliver to real addresses). Set RESEND_FROM in Vercel to e.g. Faev <hello@faev.app>");
-      }
+      const from = "Faev <onboarding@resend.dev>";
 
       // 1. Internal notification to you
       try {
