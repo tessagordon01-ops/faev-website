@@ -97,7 +97,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md lg:max-w-2xl mx-auto mb-10 px-4"
         >
-          A group-first way to find roommates and places that actually work.
+          A group-first way to find roommates and places that actually works.
         </motion.p>
 
         <motion.div
