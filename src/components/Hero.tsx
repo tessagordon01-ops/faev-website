@@ -86,22 +86,17 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-6"
         >
-          The first roommate discovery platform built with groups in mind.
+          Find the right roommates. Then the right place.
         </motion.h1>
 
-        <motion.div
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl lg:max-w-3xl mx-auto mb-10 px-4 space-y-4"
+          className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md lg:max-w-2xl mx-auto mb-10 px-4"
         >
-          <p>
-            Faev helps people find roommates, fill open seats, and apartment-hunt together — without the chaos of public housing groups, cold outreach, or unsafe listings.
-          </p>
-          <p>
-            Whether you're moving solo or already have a group, Faev helps you form the right match before you find the place.
-          </p>
-        </motion.div>
+          A group-first way to find roommates and places that actually work.
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
