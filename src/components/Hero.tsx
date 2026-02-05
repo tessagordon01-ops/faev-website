@@ -86,7 +86,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-6"
         >
-          Find the right roommates. Then the right place.
+          Find the right roommates.
+          <br />
+          <span className="text-gray-400">Then the right place.</span>
         </motion.h1>
 
         <motion.p
