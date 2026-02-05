@@ -9,39 +9,45 @@ const benefits = [
   {
     icon: (
       <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     ),
-    title: "Groups, not individuals",
-    description: "Talk to one group instead of juggling five separate people trying to figure out if they can live together.",
+    title: "Stop chasing individuals",
+    description: "No more coordinating five different people who \"might\" want to live together. Our groups are already committed.",
   },
   {
     icon: (
       <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     ),
-    title: "Everyone's verified",
-    description: "ID and face verification on every person. You know who you're renting to before they even tour.",
+    title: "Every renter is verified",
+    description: "Government ID + face match on every person. Know exactly who you're renting to before they even tour.",
   },
   {
     icon: (
       <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
       </svg>
     ),
-    title: "They're ready to move",
-    description: "These groups have already figured out who they want to live with. They just need a place.",
+    title: "Fill units faster",
+    description: "These groups have already figured out who they want to live with. They're not browsing — they're ready to sign.",
   },
   {
     icon: (
       <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
-    title: "Pricing",
-    description: "Message us for details on pricing.",
+    title: "Zero upfront cost",
+    description: "Free to list. You only pay when we successfully match you with a group that signs a lease.",
   },
+];
+
+const painPoints = [
+  "Tired of no-shows and last-minute cancellations?",
+  "Frustrated by groups that fall apart before signing?",
+  "Wasting time on unqualified leads?",
 ];
 
 export default function PropertyManagerPage() {
@@ -115,18 +121,33 @@ export default function PropertyManagerPage() {
             className="max-w-4xl mx-auto text-center"
           >
             <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-white/10 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              For Property Managers & Brokers
+              For Brokers & Property Managers
             </span>
 
             <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-4 sm:mb-6">
-              Fill vacancies
+              Verified groups.
               <br />
-              <span className="text-gray-500">with ready groups.</span>
+              <span className="text-gray-500">Ready to sign.</span>
             </h1>
 
-            <p className="text-sm sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
-              We have groups of verified renters looking for apartments. They&apos;ve already figured out who they want to live with — they just need a place.
+            <p className="text-sm sm:text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-6 sm:mb-8 px-2">
+              We send you roommate groups who&apos;ve already found each other, passed verification, and are actively looking for a place. No tire-kickers. No flakes.
             </p>
+
+            {/* Pain points */}
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-10 px-2">
+              {painPoints.map((point, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={isHeroInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                  className="text-xs sm:text-sm text-gray-500 bg-white/5 px-3 py-1.5 rounded-full"
+                >
+                  {point}
+                </motion.span>
+              ))}
+            </div>
 
             <motion.a
               href="#contact"
@@ -134,13 +155,13 @@ export default function PropertyManagerPage() {
               whileTap={{ scale: 0.98 }}
               className="inline-block bg-white text-black px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg font-medium hover:bg-gray-200 transition-colors"
             >
-              Partner With Us
+              Get Qualified Leads
             </motion.a>
           </motion.div>
         </section>
 
         {/* Benefits */}
-        <section className="py-20 sm:py-32 px-4 sm:px-6">
+        <section className="py-16 sm:py-24 px-4 sm:px-6">
           <div className="max-w-6xl mx-auto">
             <motion.div
               ref={benefitsRef}
@@ -150,9 +171,9 @@ export default function PropertyManagerPage() {
               className="text-center mb-10 sm:mb-16"
             >
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
-                Why this works
+                Why brokers
                 <br />
-                <span className="text-gray-500">for you.</span>
+                <span className="text-gray-500">love working with us.</span>
               </h2>
             </motion.div>
 
@@ -208,17 +229,19 @@ export default function PropertyManagerPage() {
         </section>
 
         {/* How It Works for PMs */}
-        <section className="py-20 sm:py-32 px-4 sm:px-6 bg-white/5">
+        <section className="py-16 sm:py-24 px-4 sm:px-6 bg-white/5">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10 sm:mb-16">
-              Here&apos;s how it works.
+              Simple process.
+              <br />
+              <span className="text-gray-500">Serious renters.</span>
             </h2>
 
             <div className="space-y-8 sm:space-y-12">
               {[
-                { step: "1", title: "Tell us what you've got", desc: "Add your available units. Takes a few minutes." },
-                { step: "2", title: "We find you renters", desc: "We match your place with groups looking for exactly what you have." },
-                { step: "3", title: "You take it from there", desc: "Schedule tours, review the group, and close the lease." },
+                { step: "1", title: "Tell us what you have", desc: "Share your available listings — takes 2 minutes. Multi-unit? We can bulk import." },
+                { step: "2", title: "We match you with groups", desc: "Our algorithm finds groups whose budget, timing, and preferences match your units." },
+                { step: "3", title: "You close the deal", desc: "Schedule tours, review verified profiles, and sign leases with groups who are ready to move." },
               ].map((item, index) => (
                 <motion.div
                   key={item.step}
@@ -241,8 +264,43 @@ export default function PropertyManagerPage() {
           </div>
         </section>
 
+        {/* Social Proof / Stats */}
+        <section className="py-16 sm:py-24 px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+              >
+                <p className="text-3xl sm:text-5xl font-bold mb-1 sm:mb-2">100%</p>
+                <p className="text-xs sm:text-sm text-gray-400">ID Verified</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <p className="text-3xl sm:text-5xl font-bold mb-1 sm:mb-2">3-5</p>
+                <p className="text-xs sm:text-sm text-gray-400">People per group</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <p className="text-3xl sm:text-5xl font-bold mb-1 sm:mb-2">$0</p>
+                <p className="text-xs sm:text-sm text-gray-400">Until you close</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Contact Form */}
-        <section id="contact" className="py-20 sm:py-32 px-4 sm:px-6">
+        <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 bg-white/5">
           <motion.div
             ref={formRef}
             initial={{ opacity: 0, y: 20 }}
@@ -252,10 +310,10 @@ export default function PropertyManagerPage() {
           >
             <div className="text-center mb-8 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-                Let&apos;s talk.
+                Start getting leads.
               </h2>
               <p className="text-sm sm:text-lg text-gray-400">
-                Fill out the form below and we&apos;ll get back to you within 24 hours.
+                Tell us about your listings and we&apos;ll start matching you with qualified groups.
               </p>
             </div>
 
@@ -285,7 +343,7 @@ export default function PropertyManagerPage() {
 
               <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium mb-2">Company</label>
+                  <label className="block text-xs sm:text-sm font-medium mb-2">Company / Brokerage</label>
                   <input
                     type="text"
                     value={formData.company}
@@ -294,28 +352,29 @@ export default function PropertyManagerPage() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs sm:text-sm font-medium mb-2">Number of Units</label>
+                  <label className="block text-xs sm:text-sm font-medium mb-2">Available Units</label>
                   <select
                     value={formData.units}
                     onChange={(e) => setFormData({ ...formData, units: e.target.value })}
                     className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg focus:border-white focus:outline-none transition-colors text-white text-sm sm:text-base [&>option]:text-black [&>option]:bg-white"
                   >
-                    <option value="">Select range</option>
-                    <option value="1-10">1-10 units</option>
-                    <option value="11-50">11-50 units</option>
-                    <option value="51-200">51-200 units</option>
-                    <option value="200+">200+ units</option>
+                    <option value="">How many units?</option>
+                    <option value="1-5">1-5 units</option>
+                    <option value="6-20">6-20 units</option>
+                    <option value="21-50">21-50 units</option>
+                    <option value="50+">50+ units</option>
                   </select>
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs sm:text-sm font-medium mb-2">Message (optional)</label>
+                <label className="block text-xs sm:text-sm font-medium mb-2">Anything else we should know?</label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  rows={4}
-                  className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg focus:border-white focus:outline-none transition-colors resize-none text-sm sm:text-base"
+                  rows={3}
+                  placeholder="Neighborhoods you cover, types of units, timeline, etc."
+                  className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-white/5 border border-white/10 rounded-lg focus:border-white focus:outline-none transition-colors resize-none text-sm sm:text-base placeholder:text-gray-600"
                 />
               </div>
 
@@ -326,7 +385,7 @@ export default function PropertyManagerPage() {
                 disabled={isSubmitting}
                 className="w-full bg-white text-black px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg font-medium hover:bg-gray-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting ? 'Sending...' : 'Submit'}
+                {isSubmitting ? 'Sending...' : 'Get Started'}
               </motion.button>
 
               {submitStatus === 'success' && (
