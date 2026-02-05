@@ -106,7 +106,7 @@ export default function PropertyManagerPage() {
 
       <main className="bg-black text-white min-h-screen">
         {/* Hero */}
-        <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-16 sm:pt-20">
+        <section className="flex flex-col items-center justify-center px-4 sm:px-6 pt-24 sm:pt-32 pb-16 sm:pb-20">
           <motion.div
             ref={heroRef}
             initial={{ opacity: 0, y: 20 }}
