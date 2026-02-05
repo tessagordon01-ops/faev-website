@@ -40,14 +40,14 @@ export default function UserFlows() {
   const [activeFlow, setActiveFlow] = useState(0);
 
   return (
-    <section id="how-it-works" className="py-32 px-6 bg-gray-50">
+    <section id="how-it-works" className="py-20 sm:py-32 px-4 sm:px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <span className="text-sm font-medium text-gray-400 uppercase tracking-wider">
             How It Works
@@ -55,13 +55,13 @@ export default function UserFlows() {
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
             Three ways to start
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg sm:text-xl text-gray-600 mt-4 max-w-2xl mx-auto px-4">
             Whether you have a place, have people, or have neither — there's a way in.
           </p>
         </motion.div>
 
-        {/* Flow selector tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* Desktop: Tab selector */}
+        <div className="hidden sm:flex flex-wrap justify-center gap-3 mb-12">
           {flows.map((flow, index) => (
             <motion.button
               key={flow.id}
@@ -79,13 +79,13 @@ export default function UserFlows() {
           ))}
         </div>
 
-        {/* Active flow content */}
+        {/* Desktop: Active flow content */}
         <motion.div
           key={activeFlow}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="grid lg:grid-cols-2 gap-12 items-center"
+          className="hidden sm:grid lg:grid-cols-2 gap-12 items-center"
         >
           {/* Image */}
           <div className="relative order-2 lg:order-1">
@@ -150,6 +150,74 @@ export default function UserFlows() {
             </motion.a>
           </div>
         </motion.div>
+
+        {/* Mobile: Horizontal scrollable cards */}
+        <div className="sm:hidden">
+          <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4">
+            {flows.map((flow, index) => (
+              <motion.div
+                key={flow.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                className="flex-shrink-0 w-[85vw] snap-center bg-white rounded-2xl overflow-hidden shadow-sm"
+              >
+                {/* Card Image */}
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={flow.image}
+                    alt={flow.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute top-3 right-3 bg-black text-white px-3 py-1.5 rounded-full text-xs font-medium">
+                    {flow.tag}
+                  </div>
+                </div>
+
+                {/* Card Content */}
+                <div className="p-5">
+                  <h3 className="text-xl font-bold mb-2">
+                    {flow.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 mb-4">
+                    {flow.description}
+                  </p>
+
+                  <ul className="space-y-2 mb-5">
+                    {flow.forWho.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                        <div className="w-5 h-5 bg-black/10 rounded-full flex items-center justify-center flex-shrink-0">
+                          <svg className="w-2.5 h-2.5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href="/signup"
+                    className="block w-full bg-black text-white py-3 rounded-full text-sm font-medium text-center"
+                  >
+                    {flow.cta}
+                  </a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Scroll indicator dots */}
+          <div className="flex justify-center gap-2 mt-4">
+            {flows.map((_, index) => (
+              <div
+                key={index}
+                className="w-2 h-2 rounded-full bg-gray-300"
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
