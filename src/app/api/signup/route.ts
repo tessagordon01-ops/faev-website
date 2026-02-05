@@ -22,11 +22,15 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    // Send emails via Resend
+    // Send emails via Resend — must use RESEND_FROM (verified domain) to deliver to real addresses
     const RESEND_API_KEY = process.env.RESEND_API_KEY;
+    const RESEND_FROM = process.env.RESEND_FROM || "Faev <onboarding@resend.dev>";
     if (RESEND_API_KEY) {
       const resend = new Resend(RESEND_API_KEY);
-      const from = "Faev <onboarding@resend.dev>";
+      const from = RESEND_FROM;
+      if (from.includes("resend.dev")) {
+        console.warn("RESEND_FROM not set or invalid — using onboarding@resend.dev (emails will NOT deliver to real addresses). Set RESEND_FROM in Vercel to e.g. Faev <hello@faev.app>");
+      }
 
       // 1. Internal notification to you
       try {
