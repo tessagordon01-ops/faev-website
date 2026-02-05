@@ -51,12 +51,34 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Faev",
-  alternateName: "Faev | The First Roommate Discovery Platform Built With Groups In Mind",
-  url: "https://faev.app",
-  description:
-    "Faev helps people find roommates, fill open seats, and apartment-hunt together — without the chaos of public housing groups, cold outreach, or unsafe listings. Whether you're moving solo or already have a group, Faev helps you form the right match before you find the place.",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "Faev",
+      alternateName: "Faev | Find Your Perfect Roommate Group",
+      url: "https://faev.app",
+      description:
+        "Faev helps people find roommates, fill open seats, and apartment-hunt together — without the chaos of public housing groups, cold outreach, or unsafe listings.",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "For Property Managers",
+      description: "Partner with Faev to connect with verified roommate groups ready to sign",
+      url: "https://faev.app/property-manager",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "How It Works",
+      description: "Learn how Faev helps you find roommates and apartments",
+      url: "https://faev.app/#how-it-works",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      name: "For Groups",
+      description: "Why apartment hunting with Faev works better",
+      url: "https://faev.app/#for-groups",
+    },
+  ],
 };
 
 export default function RootLayout({
