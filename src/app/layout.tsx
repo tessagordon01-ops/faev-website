@@ -37,8 +37,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/Faev_Logo.png", type: "image/png", sizes: "any" },
-      { url: "/logo.png", type: "image/png", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
     ],
   },
   appleWebApp: {
