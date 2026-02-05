@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-12 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-16 sm:pt-20 pb-8 sm:pb-12 relative overflow-hidden">
       {/* Background floating images - only visible on large screens (1024px+) */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
         {/* Top left */}
@@ -75,7 +75,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="inline-block px-4 py-1.5 bg-black/5 rounded-full text-sm font-medium mb-6">
+          <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-black/5 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
             Launching soon in NYC & LA
           </span>
         </motion.div>
@@ -84,7 +84,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15] mb-6"
+          className="text-[2.5rem] leading-[1.1] sm:text-5xl md:text-5xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6"
         >
           Find the right roommates.
           <br />
@@ -95,22 +95,57 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-base sm:text-lg md:text-xl text-gray-600 max-w-md lg:max-w-2xl mx-auto mb-10 px-4"
+          className="text-sm sm:text-lg md:text-xl text-gray-600 max-w-xs sm:max-w-md lg:max-w-2xl mx-auto mb-6 sm:mb-10"
         >
-          A group-first way to find roommates and places that actually works.
+          A group-first way to find roommates and places that actually work.
         </motion.p>
 
+        {/* Mobile image collage - shows before buttons on mobile */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
+          className="mb-6 lg:hidden"
+        >
+          <div className="flex gap-2 justify-center px-2">
+            <div className="relative w-28 h-36 sm:w-32 sm:h-40 rounded-xl overflow-hidden shadow-md -rotate-3">
+              <Image
+                src="/hero-kitchen.jpg"
+                alt="Friends in kitchen"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative w-28 h-36 sm:w-32 sm:h-40 rounded-xl overflow-hidden shadow-md translate-y-2">
+              <Image
+                src="/hero-1.jpg"
+                alt="Friends gathering"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative w-28 h-36 sm:w-32 sm:h-40 rounded-xl overflow-hidden shadow-md rotate-3">
+              <Image
+                src="/hero-2.jpg"
+                alt="Friends dancing"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center"
         >
           <motion.a
             href="/signup"
             whileHover={{ scale: 1.02, backgroundColor: "#1a1a1a" }}
             whileTap={{ scale: 0.98 }}
-            className="bg-black text-white px-8 py-4 rounded-full text-lg font-medium w-full sm:w-auto transition-colors text-center"
+            className="bg-black text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg font-medium w-full sm:w-auto transition-colors text-center max-w-xs"
           >
             Request Access
           </motion.a>
@@ -118,27 +153,10 @@ export default function Hero() {
             href="#how-it-works"
             whileHover={{ scale: 1.02, backgroundColor: "#f5f5f5" }}
             whileTap={{ scale: 0.98 }}
-            className="border-2 border-black text-black px-8 py-4 rounded-full text-lg font-medium w-full sm:w-auto transition-colors text-center"
+            className="border-2 border-black text-black px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg font-medium w-full sm:w-auto transition-colors text-center max-w-xs"
           >
             See How It Works
           </motion.a>
-        </motion.div>
-
-        {/* Hero image for mobile and medium screens */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 lg:hidden"
-        >
-          <div className="relative w-full h-64 rounded-2xl overflow-hidden shadow-lg mx-auto max-w-sm">
-            <Image
-              src="/hero-1.jpg"
-              alt="Friends gathering"
-              fill
-              className="object-cover"
-            />
-          </div>
         </motion.div>
       </div>
 
