@@ -148,7 +148,7 @@ export default function PropertyManagerCTA() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 }}
-                className="absolute bottom-3 left-3 right-3 bg-white text-black p-4 rounded-xl shadow-lg"
+                className="absolute top-3 left-3 right-3 bg-white text-black p-4 rounded-xl shadow-lg"
               >
                 <div className="flex items-center gap-3 mb-2">
                   <div className="flex -space-x-2">
