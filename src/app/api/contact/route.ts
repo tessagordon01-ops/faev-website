@@ -12,33 +12,43 @@ export async function POST(request: Request) {
     const { name, email, company, units, message } = await request.json();
 
     // Send notification to Tessa
-    await resend.emails.send({
-      from: 'Faev <onboarding@resend.dev>',
-      to: 'tessa@faev.app',
-      subject: `New Property Manager Inquiry from ${name}`,
-      html: `
-        <h2>New Property Manager Inquiry</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company || 'Not provided'}</p>
-        <p><strong>Number of Units:</strong> ${units || 'Not provided'}</p>
-        <p><strong>Message:</strong> ${message || 'No message'}</p>
-      `,
-    });
+    try {
+      await resend.emails.send({
+        from: 'Faev <onboarding@resend.dev>',
+        to: 'tessa@faev.app',
+        subject: `New Property Manager Inquiry from ${name}`,
+        html: `
+          <h2>New Property Manager Inquiry</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Company:</strong> ${company || 'Not provided'}</p>
+          <p><strong>Number of Units:</strong> ${units || 'Not provided'}</p>
+          <p><strong>Message:</strong> ${message || 'No message'}</p>
+        `,
+      });
+      console.log('Contact notification sent to tessa@faev.app');
+    } catch (notifyError) {
+      console.error('Failed to send notification to Tessa:', notifyError);
+    }
 
     // Send auto-reply to the property manager
-    await resend.emails.send({
-      from: 'Faev <onboarding@resend.dev>',
-      to: email,
-      subject: 'Thanks for signing up for Faev',
-      html: `
-        <p>Hi there —</p>
-        <p>Thank you for signing up for Faev. We've received your information and a member of our team will reach out shortly with next steps.</p>
-        <p>We're currently onboarding a small group of brokers and property managers as part of our beta, and we'll be in touch soon to confirm access and details.</p>
-        <p>If you have any questions in the meantime, feel free to reply to this email.</p>
-        <p>Best,<br>Tessa Gordon<br>Co-founder of Faev</p>
-      `,
-    });
+    try {
+      await resend.emails.send({
+        from: 'Faev <onboarding@resend.dev>',
+        to: email,
+        subject: 'Thanks for signing up for Faev',
+        html: `
+          <p>Hi there —</p>
+          <p>Thank you for signing up for Faev. We've received your information and a member of our team will reach out shortly with next steps.</p>
+          <p>We're currently onboarding a small group of brokers and property managers as part of our beta, and we'll be in touch soon to confirm access and details.</p>
+          <p>If you have any questions in the meantime, feel free to reply to this email.</p>
+          <p>Best,<br>Tessa Gordon<br>Co-founder of Faev</p>
+        `,
+      });
+      console.log('Auto-reply sent to:', email);
+    } catch (replyError) {
+      console.error('Failed to send auto-reply:', replyError);
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
