@@ -39,8 +39,8 @@ const benefits = [
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
     ),
-    title: "Zero upfront cost",
-    description: "Free to list. You only pay when we successfully match you with a group that signs a lease.",
+    title: "Completely free for brokers",
+    description: "While we're in our early days, Faev is completely free to use for brokers and property managers.",
   },
 ];
 
@@ -292,8 +292,8 @@ export default function PropertyManagerPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <p className="text-3xl sm:text-5xl font-bold mb-1 sm:mb-2">$0</p>
-                <p className="text-xs sm:text-sm text-gray-400">Until you close</p>
+                <p className="text-3xl sm:text-5xl font-bold mb-1 sm:mb-2">Free</p>
+                <p className="text-xs sm:text-sm text-gray-400">During early access</p>
               </motion.div>
             </div>
           </div>
