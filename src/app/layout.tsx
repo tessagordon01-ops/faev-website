@@ -42,6 +42,16 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Faev",
+  alternateName: "Faev | The First Roommate Discovery Platform Built With Groups In Mind",
+  url: "https://faev.app",
+  description:
+    "Faev helps people find roommates, fill open seats, and apartment-hunt together — without the chaos of public housing groups, cold outreach, or unsafe listings. Whether you're moving solo or already have a group, Faev helps you form the right match before you find the place.",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +60,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${dancingScript.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
       </body>
     </html>
