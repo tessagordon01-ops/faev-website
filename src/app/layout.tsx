@@ -35,6 +35,12 @@ export const metadata: Metadata = {
       "Faev helps people find roommates, fill open seats, and apartment-hunt together — without the chaos of public housing groups, cold outreach, or unsafe listings.\n\nWhether you’re moving solo or already have a group, Faev helps you form the right match before you find the place.",
     images: [`${siteUrl}/logo.png`],
   },
+  icons: {
+    icon: [
+      { url: "/Faev_Logo.png", type: "image/png", sizes: "any" },
+      { url: "/logo.png", type: "image/png", sizes: "any" },
+    ],
+  },
   appleWebApp: {
     capable: true,
     title: "Faev",
