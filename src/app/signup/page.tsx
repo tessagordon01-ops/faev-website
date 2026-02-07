@@ -505,6 +505,9 @@ export default function SignupPage() {
                 >
                   {isSubmitting ? "Submitting..." : "Join the waitlist"}
                 </button>
+                <p className="text-xs text-gray-400 text-center mt-3">
+                  By signing up, you agree to receive transactional SMS from Faev. Reply STOP to opt out.
+                </p>
               </motion.div>
             )}
 
