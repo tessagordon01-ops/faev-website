@@ -13,7 +13,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="absolute top-24 left-[3%] w-48 h-60 rounded-2xl overflow-hidden shadow-lg"
+          className="absolute top-24 left-[3%] lg:w-36 lg:h-44 xl:w-48 xl:h-60 rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
             src="/hero-1.jpg"
@@ -28,7 +28,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 1, delay: 0.7 }}
-          className="absolute bottom-24 left-[8%] w-44 h-56 rounded-2xl overflow-hidden shadow-lg"
+          className="absolute bottom-24 left-[8%] lg:w-32 lg:h-40 xl:w-44 xl:h-56 rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
             src="/hero-3.jpg"
@@ -43,7 +43,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="absolute top-28 right-[3%] w-44 h-56 rounded-2xl overflow-hidden shadow-lg"
+          className="absolute top-28 right-[3%] lg:w-32 lg:h-40 xl:w-44 xl:h-56 rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
             src="/hero-2.jpg"
@@ -58,7 +58,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 0.65, y: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="absolute bottom-20 right-[8%] w-48 h-60 rounded-2xl overflow-hidden shadow-lg"
+          className="absolute bottom-20 right-[8%] lg:w-36 lg:h-44 xl:w-48 xl:h-60 rounded-2xl overflow-hidden shadow-lg"
         >
           <Image
             src="/hero-kitchen.jpg"
@@ -107,8 +107,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-5 lg:hidden"
         >
-          <div className="flex gap-2 justify-center px-2">
-            <div className="relative w-24 h-32 sm:w-32 sm:h-40 rounded-xl overflow-hidden shadow-md -rotate-3">
+          <div className="flex gap-1.5 sm:gap-2 justify-center px-2">
+            <div className="relative w-20 h-26 sm:w-32 sm:h-40 rounded-lg sm:rounded-xl overflow-hidden shadow-md -rotate-3">
               <Image
                 src="/hero-kitchen.jpg"
                 alt="Friends in kitchen"
@@ -116,7 +116,7 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div className="relative w-24 h-32 sm:w-32 sm:h-40 rounded-xl overflow-hidden shadow-md translate-y-2">
+            <div className="relative w-20 h-26 sm:w-32 sm:h-40 rounded-lg sm:rounded-xl overflow-hidden shadow-md translate-y-2">
               <Image
                 src="/hero-1.jpg"
                 alt="Friends gathering"
@@ -124,7 +124,7 @@ export default function Hero() {
                 className="object-cover"
               />
             </div>
-            <div className="relative w-24 h-32 sm:w-32 sm:h-40 rounded-xl overflow-hidden shadow-md rotate-3">
+            <div className="relative w-20 h-26 sm:w-32 sm:h-40 rounded-lg sm:rounded-xl overflow-hidden shadow-md rotate-3">
               <Image
                 src="/hero-2.jpg"
                 alt="Friends dancing"

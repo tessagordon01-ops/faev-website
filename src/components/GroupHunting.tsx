@@ -145,7 +145,7 @@ export default function GroupHunting() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="relative mb-6"
           >
-            <div className="rounded-2xl overflow-hidden aspect-[4/5] relative bg-gray-100">
+            <div className="rounded-2xl overflow-hidden aspect-[3/4] relative bg-gray-100">
               <Image
                 src="/subway-girl.jpg"
                 alt="Woman on NYC subway platform"

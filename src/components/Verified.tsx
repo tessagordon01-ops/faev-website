@@ -60,7 +60,7 @@ export default function Verified() {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="rounded-2xl overflow-hidden aspect-[4/5] sm:aspect-square bg-gray-100 relative max-w-sm sm:max-w-md mx-auto">
+            <div className="rounded-2xl overflow-hidden aspect-[3/4] sm:aspect-square bg-gray-100 relative max-w-[280px] sm:max-w-md mx-auto">
               <Image
                 src="/friends-walking.jpg"
                 alt="Friends walking in NYC"

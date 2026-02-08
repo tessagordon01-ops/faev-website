@@ -160,10 +160,10 @@ export default function UserFlows() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="flex-shrink-0 w-[85vw] snap-center bg-white rounded-2xl overflow-hidden shadow-sm"
+                className="flex-shrink-0 w-[75vw] snap-center bg-white rounded-2xl overflow-hidden shadow-sm"
               >
                 {/* Card Image */}
-                <div className="relative aspect-[4/3]">
+                <div className="relative aspect-[16/10]">
                   <Image
                     src={flow.image}
                     alt={flow.title}

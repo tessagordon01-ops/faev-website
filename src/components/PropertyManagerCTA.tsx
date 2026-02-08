@@ -135,7 +135,7 @@ export default function PropertyManagerCTA() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="relative mb-6"
           >
-            <div className="rounded-2xl overflow-hidden aspect-[4/5] relative">
+            <div className="rounded-2xl overflow-hidden aspect-[3/4] relative">
               <Image
                 src="/nyc-brownstones.jpg"
                 alt="NYC brownstones"
