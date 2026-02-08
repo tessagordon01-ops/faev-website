@@ -26,7 +26,7 @@ export default function ForGroups() {
   const isHeaderInView = useInView(headerRef, { once: true });
 
   return (
-    <section id="for-groups" className="py-20 sm:py-32 px-4 sm:px-6 bg-gray-50 overflow-hidden">
+    <section id="for-groups" className="py-14 sm:py-32 px-4 sm:px-6 bg-gray-50 overflow-hidden">
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <motion.div

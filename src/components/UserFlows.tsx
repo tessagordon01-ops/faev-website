@@ -40,7 +40,7 @@ export default function UserFlows() {
   const [activeFlow, setActiveFlow] = useState(0);
 
   return (
-    <section id="how-it-works" className="py-20 sm:py-32 px-4 sm:px-6 bg-gray-50">
+    <section id="how-it-works" className="py-14 sm:py-32 px-4 sm:px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -52,10 +52,10 @@ export default function UserFlows() {
           <span className="text-sm font-medium text-gray-400 uppercase tracking-wider">
             How It Works
           </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold mt-3 sm:mt-4">
             Three ways to start
           </h2>
-          <p className="text-base sm:text-lg sm:text-xl text-gray-600 mt-4 max-w-2xl mx-auto px-4">
+          <p className="text-sm sm:text-lg sm:text-xl text-gray-600 mt-3 sm:mt-4 max-w-2xl mx-auto px-4">
             Whether you have a place, have people, or have neither — there's a way in.
           </p>
         </motion.div>

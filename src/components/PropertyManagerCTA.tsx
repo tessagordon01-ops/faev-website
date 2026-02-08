@@ -10,7 +10,7 @@ export default function PropertyManagerCTA() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section ref={ref} className="py-20 sm:py-32 px-4 sm:px-6 bg-black text-white overflow-hidden">
+    <section ref={ref} className="py-14 sm:py-32 px-4 sm:px-6 bg-black text-white overflow-hidden">
       <div className="max-w-6xl mx-auto">
         {/* Desktop Layout */}
         <motion.div
