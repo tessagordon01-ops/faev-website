@@ -31,7 +31,7 @@ export default function CTA() {
             whileTap={{ scale: 0.98 }}
             className="inline-block bg-black text-white px-10 py-5 rounded-full text-xl font-medium hover:bg-gray-800 transition-colors"
           >
-            Request Access
+            Get Started
           </motion.a>
 
           <p className="text-sm text-gray-400 mt-6">

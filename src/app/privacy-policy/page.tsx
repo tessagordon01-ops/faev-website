@@ -73,10 +73,10 @@ export default function PrivacyPolicyPage() {
               <p className="text-gray-600">
                 If you have any questions about our privacy practices, please contact us at{" "}
                 <a
-                  href="mailto:hello@faev.app"
+                  href="mailto:support@faev.app"
                   className="text-black underline underline-offset-4 hover:no-underline"
                 >
-                  hello@faev.app
+                  support@faev.app
                 </a>
               </p>
             </motion.div>

@@ -41,7 +41,7 @@ export default function Header() {
             whileTap={{ scale: 0.98 }}
             className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
           >
-            Request Access
+            Get Started
           </motion.a>
         </div>
 
@@ -103,7 +103,7 @@ export default function Header() {
                 href="/signup"
                 className="bg-black text-white px-6 py-3 rounded-full text-base font-medium mt-2 text-center"
               >
-                Request Access
+                Get Started
               </a>
             </div>
           </motion.div>

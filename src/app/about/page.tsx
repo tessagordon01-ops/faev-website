@@ -111,7 +111,7 @@ export default function AboutPage() {
               whileTap={{ scale: 0.98 }}
               className="inline-block bg-black text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-800 transition-colors"
             >
-              Request Access
+              Get Started
             </motion.a>
           </div>
         </section>

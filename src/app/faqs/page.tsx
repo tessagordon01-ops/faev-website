@@ -134,7 +134,7 @@ export default function FAQsPage() {
           <div className="max-w-3xl mx-auto text-center">
             <p className="text-gray-600 mb-6">Still have questions?</p>
             <a
-              href="mailto:hello@faev.app"
+              href="mailto:support@faev.app"
               className="text-black font-medium underline underline-offset-4 hover:no-underline"
             >
               Reach out to us

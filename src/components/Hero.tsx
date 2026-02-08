@@ -147,7 +147,7 @@ export default function Hero() {
             whileTap={{ scale: 0.98 }}
             className="bg-black text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-sm sm:text-lg font-medium w-full sm:w-auto transition-colors text-center max-w-xs"
           >
-            Request Access
+            Get Started
           </motion.a>
           <motion.a
             href="#how-it-works"
