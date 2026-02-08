@@ -34,13 +34,13 @@ export default function PropertyManagerCTA() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/property-manager">
+              <Link href="/signup">
                 <motion.span
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-2 bg-white text-black px-8 py-4 rounded-full text-lg font-medium hover:bg-gray-200 transition-colors"
                 >
-                  Learn More
+                  Get Connected to Leads
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -177,9 +177,9 @@ export default function PropertyManagerCTA() {
             transition={{ duration: 0.4, delay: 0.2 }}
             className="mb-8"
           >
-            <Link href="/property-manager" className="block">
+            <Link href="/signup" className="block">
               <span className="flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-full text-sm font-medium w-full">
-                Learn More
+                Get Connected to Leads
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
